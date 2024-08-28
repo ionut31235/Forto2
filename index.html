@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forto</title>
+    <meta name="description" content="Site pentru vanzarea de jucarii">
+    <style>
+        /* Stiluri generale pentru pagină */
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #f3e7e9 0%, #e3eeff 100%);
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+
+        h1, h2, h3 {
+            text-align: center;
+            color: #4A90E2;
+        }
+
+        p {
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 20px auto;
+            text-align: justify;
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background: #ddd;
+            margin: 40px 0;
+        }
+
+        /* Stil pentru imaginea principală */
+        .main-image {
+            display: block;
+            margin: 0 auto;
+            border-radius: 15px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .main-image:hover {
+            transform: scale(1.05);
+        }
+
+        /* Slider-ul de imagini */
+        .slider-container {
+            position: relative;
+            width: 320px;
+            height: 240px;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+            margin: 20px auto;
+            background-color: #fff;
+        }
+
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slides img {
+            width: 320px;
+            height: 240px;
+            border-radius: 15px;
+        }
+
+        /* Butoanele de control pentru slider */
+        .controls {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+
+        .controls button {
+            background-color: rgba(0, 0, 0, 0.5);
+            border: none;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .controls button:hover {
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        /* Contact Information */
+        .contact-info {
+            text-align: center;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Forto - Magazinul Magic de Jucării</h1>
+    <h2>Bine ai venit la Forto, destinația ta</h2>
+    <p>Bine ai venit la Forto, destinația ta ideală pentru a aduce bucurie și uimire în lumea copilului tău! La Forto, credem în magia jocului, unde fiecare jucărie este o poartă către aventuri fără sfârșit, creativitate și învățare. Colecția noastră atent selecționată de jucării este concepută pentru a inspira imaginația, a promova dezvoltarea și, cel mai important, pentru a aduce zâmbete pe chipurile copiilor.</p>
+    <hr>
+    <img src="./index (1).jpg" class="main-image" height="350" alt="Copii Fericiti">
+    <hr>
+    <p>La Forto, suntem pasionați de dezvoltarea minților tinere și de crearea unor amintiri de neuitat. Personalul nostru prietenos și bine informat este mereu aici pentru a te ajuta să găsești jucăria perfectă care să încânte micuțul tău și să facă fiecare moment magic.</p>
+    <p>Descoperă bucuria jocului la Forto, locul unde imaginația prinde aripi!</p>
+    
+    <h2>Jucării disponibile</h2>
+    <p>Kit de construit fort</p>
+
+    <!-- Slider-ul de Imagini -->
+    <div class="slider-container">
+        <div class="slides">
+            <img src="./index (2).webp" alt="Jucărie 1">
+            <img src="./index (3).webp" alt="Jucărie 2">
+        </div>
+        <div class="controls">
+            <button id="prev">&lt;</button>
+            <button id="next">&gt;</button>
+        </div>
+    </div>
+
+    <p>Pentru comenzi vă rugăm apelați la numărul de contact.</p>
+    <hr>
+
+    <div class="contact-info">
+        <h3>Contact: orsaionutc@gmail.com</h3>
+        <h3>Număr de telefon: 0760354394</h3>
+    </div>
+
+    <script>
+        let slideIndex = 0;
+        const slides = document.querySelector('.slides');
+        const totalSlides = slides.children.length;
+
+        document.getElementById('next').addEventListener('click', () => {
+            slideIndex = (slideIndex + 1) % totalSlides;
+            updateSlidePosition();
+        });
+
+        document.getElementById('prev').addEventListener('click', () => {
+            slideIndex = (slideIndex - 1 + totalSlides) % totalSlides;
+            updateSlidePosition();
+        });
+
+        function updateSlidePosition() {
+            slides.style.transform = `translateX(-${slideIndex * 320}px)`;
+        }
+    </script>
+</body>
+</html>
